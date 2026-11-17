@@ -1,9 +1,41 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0a1128 0%, #101c38 40%, #0d233a 70%, #05101f 100%);
+    background-color: #0a1128; /* Color de respaldo */
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+#portada {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header img {
+  width: 80px;
+  border-radius: 10%;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: normal;
+  color: darkgreen;
+  margin-left: 20px;
+}
+header nav a:hover {
+  font-weight: bold;
 }
