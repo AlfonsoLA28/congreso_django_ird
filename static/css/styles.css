@@ -12,10 +12,13 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+  padding: 20px;
+}
+
 #portada {
   display: block;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
 }
 
 header {
@@ -23,6 +26,7 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 header img {
@@ -33,9 +37,62 @@ header img {
 header nav a {
   text-decoration: none;
   font-weight: normal;
-  color: darkgreen;
+  color: white;
   margin-left: 20px;
 }
+
 header nav a:hover {
   font-weight: bold;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.container-workshop {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  .card {
+      width: 400px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(112, 219, 240, 0.2);
+      margin-bottom: 20px;
+  }
+
+  .card .card-header {
+      color: white;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px 10px 0 0;
+      padding: 20px 10px;
+  }
+
+  .card .card-body {
+      padding: 10px;
+
+      .btn {
+        margin: 20px 0;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 4px 8px rgba(112, 219, 240, 0.2);
+      }
+
+      .btn:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(112, 219, 240, 0.5);
+      }
+  }
 }
