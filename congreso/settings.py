@@ -59,10 +59,12 @@ ROOT_URLCONF = 'congreso.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        # Agrega la ruta a tu carpeta global templates si aún no está
+        'DIRS': [BASE_DIR / 'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -71,8 +73,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'congreso.wsgi.application'
-
+# Redirecciones de autenticación (llevan a la raíz "/")
+LOGIN_URL = 'login'               # Nombre de la ruta si alguien intenta entrar a una vista protegida
+LOGIN_REDIRECT_URL = '/'          # Destino tras iniciar sesión con éxito
+LOGOUT_REDIRECT_URL = '/'         # Destino tras cerrar sesión con éxito
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases

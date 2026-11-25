@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# congreso/urls.py
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -21,10 +22,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # Habilita login, logout, password_change, password_reset, etc.
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('talleres/', include('workshops.urls') ),
     path('', include('home.urls')),
-    path('talleres/', include('workshops.urls')),
+    # Ejemplo de ruta raíz "/" (reemplázala por tu vista principal si ya la tienes)
 ]
+
 urlpatterns += static(settings.MEDIA_URL, 
                       document_root=settings.MEDIA_ROOT)
-
-
